@@ -37,4 +37,11 @@ public class NameValidationFailTest {
         boolean result = validation.isAlphabet("mild333");
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีตัวเลข", result);
     }
+
+    @Test
+    public void NameLenthis1(){
+        NameValidation validation = new NameValidation();
+        boolean result = validation.lenthIsin2to20("m");
+        assertFalse("ต้องไม่ผ่านเพราะว่ามีแค่ตัวอักษรเดียว", result);
+    }
 }
