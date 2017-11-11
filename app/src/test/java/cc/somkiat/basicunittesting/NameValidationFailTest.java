@@ -44,4 +44,11 @@ public class NameValidationFailTest {
         boolean result = validation.lenthIsin2to20("m");
         assertFalse("ต้องไม่ผ่านเพราะว่ามีแค่ตัวอักษรเดียว", result);
     }
+
+    @Test
+    public void NameLenthis21(){
+        NameValidation validation = new NameValidation();
+        boolean result = validation.lenthIsin2to20("abcdefghijklmnopqrstu");
+        assertFalse("ต้องไม่ผ่านเพราะว่ามีแัวอักษร21ตัว", result);
+    }
 }
