@@ -31,5 +31,10 @@ public class NameValidationFailTest {
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีตัวอักษรพิเศษ", result);
     }
 
-    
+    @Test
+    public void NameHaveNumberic(){
+        NameValidation validation = new NameValidation();
+        boolean result = validation.isAlphabet("mild333");
+        assertFalse("ต้องไม่ผ่านเพราะว่ามันมีตัวเลข", result);
+    }
 }
