@@ -9,10 +9,15 @@ class NameValidation {
 
     public String validationNameResult(String name){
 
-        if (isEmpty(name))validationResult = "Name is Empty";
-        else if (isNull(name)) validationResult = "Name is Null";
-        else if (isAlphabet(name)) validationResult = "Name contain non Alphabet Characters";
-
+        if (isEmpty(name) == false){
+            validationResult = "Name is Empty";
+        }
+        if (isNull(name) == false){
+            validationResult = "Name is Null";
+        }
+        else if (isAlphabet(name) == false) {
+            validationResult = "Name contain non Alphabet Characters";
+        }
         return validationResult;
     }
     public boolean isEmpty(String name) {
@@ -28,7 +33,7 @@ class NameValidation {
         return true;
     }
     public boolean isAlphabet(String name) {
-        if(!name.matches("[A-Za-z]+")) {
+        if(!name.matches("^[ A-Za-z]+$")) {
             return false;
         }
         return true;
