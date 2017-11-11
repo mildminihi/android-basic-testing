@@ -5,8 +5,29 @@ package cc.somkiat.basicunittesting;
  */
 
 class NameValidation {
+    private String validationResult;
+
+    public String validationNameResult(String name){
+        if (isEmpty(name))validationResult = "Name is Empty";
+        else if (isNull(name)) validationResult = "Name is Null";
+        else if (isAlphabet(name)) validationResult = "Name contain non Alphabet Characters";
+
+        return validationResult;
+    }
     public boolean isEmpty(String name) {
         if (name.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+    public boolean isNull(String name) {
+        if (name == null) {
+            return false;
+        }
+        return true;
+    }
+    public boolean isAlphabet(String name) {
+        if(!name.matches("[A-Za-z]+")) {
             return false;
         }
         return true;

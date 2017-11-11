@@ -13,6 +13,13 @@ public class NameValidationFailTest {
     @Test
     public void NameisNull(){
         NameValidation validation = new NameValidation();
+        boolean result = validation.isNull(null);
+        assertFalse("ต้องไม่ผ่านเพราะว่ามันnull", result);
+    }
+
+    @Test
+    public void NameisEmpty(){
+        NameValidation validation = new NameValidation();
         boolean result = validation.isEmpty("");
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีค่าว่าง", result);
     }
