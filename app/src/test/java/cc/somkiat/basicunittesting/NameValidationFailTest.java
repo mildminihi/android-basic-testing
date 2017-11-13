@@ -22,40 +22,45 @@ public class NameValidationFailTest {
     @Test
     public void NameisEmpty(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.isEmpty("");
+        String input = "";
+        boolean result = validation.isEmpty(input);
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีค่าว่าง", result);
-        assertEquals("Name is Empty", validation.validationNameResult(""));
+        assertEquals("Name is Empty", validation.validationNameResult(input));
     }
 
     @Test
     public void NameHaveSpecialChar(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.isAlphabet(".a<>@");
+        String input = ".a<>@";
+        boolean result = validation.isAlphabet(input);
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีตัวอักษรพิเศษ", result);
-        assertEquals("Name contain non Alphabet Characters", validation.validationNameResult(".a<>@"));
+        assertEquals("Name contain non Alphabet Characters", validation.validationNameResult(input));
     }
 
     @Test
     public void NameHaveNumberic(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.isAlphabet("mild333");
+        String input = "mild333";
+        boolean result = validation.isAlphabet(input);
         assertFalse("ต้องไม่ผ่านเพราะว่ามันมีตัวเลข", result);
-        assertEquals("Name contain non Alphabet Characters", validation.validationNameResult("mild333"));
+        assertEquals("Name contain non Alphabet Characters", validation.validationNameResult(input));
     }
 
     @Test
     public void NameLenthis1(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.lengthIsin2to20("m");
+        String input = "m";
+        boolean result = validation.lengthIsin2to20(input);
         assertFalse("ต้องไม่ผ่านเพราะว่ามีแค่ตัวอักษรเดียว", result);
-        assertEquals("Name is Not in Length", validation.validationNameResult("m"));
+        assertEquals("Name is Not in Length", validation.validationNameResult(input));
     }
 
     @Test
     public void NameLenthis21(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.lengthIsin2to20("abcdefghijklmnopqrstu");
+        String input = "abcdefghijklmnopqrstu";
+        boolean result = validation.lengthIsin2to20(input);
         assertFalse("ต้องไม่ผ่านเพราะว่ามีแัวอักษร21ตัว", result);
-        assertEquals("Name is Not in Length", validation.validationNameResult("abcdefghijklmnopqrstu"));
+        assertEquals("Name is Not in Length", validation.validationNameResult(input));
     }
 }

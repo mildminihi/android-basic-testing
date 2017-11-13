@@ -13,26 +13,28 @@ public class EmailValidationSuccessTest {
     @Test
     public void emailIsStandard(){
         EmailValidation emailValidation = new EmailValidation();
-        boolean resultPattern = emailValidation.isEmailPattern("mild@example.com");
-        boolean resultEmpty = emailValidation.isEmailPattern("mild@example.com");
-        boolean resultNull = emailValidation.isEmailPattern("mild@example.com");
+        String input = "mild@example.com";
+        boolean resultPattern = emailValidation.isEmailPattern(input);
+        boolean resultEmpty = emailValidation.isEmailPattern(input);
+        boolean resultNull = emailValidation.isEmailPattern(input);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultPattern);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultEmpty);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultNull);
-        assertEquals("Email Validation Success", emailValidation.validationEmailResult("mild@example.com"));
+        assertEquals("Email Validation Success", emailValidation.validationEmailResult(input));
 
     }
 
     @Test
     public void emailIsStandard2(){
         EmailValidation emailValidation = new EmailValidation();
-        boolean resultPattern = emailValidation.isEmailPattern("mild@example.co.th");
-        boolean resultEmpty = emailValidation.isEmailPattern("mild@example.co.th");
-        boolean resultNull = emailValidation.isEmailPattern("mild@example.co.th");
+        String input = "mild@example.co.th";
+        boolean resultPattern = emailValidation.isEmailPattern(input);
+        boolean resultEmpty = emailValidation.isEmailPattern(input);
+        boolean resultNull = emailValidation.isEmailPattern(input);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultPattern);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultEmpty);
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", resultNull);
-        assertEquals("Email Validation Success", emailValidation.validationEmailResult("mild@example.co.th"));
+        assertEquals("Email Validation Success", emailValidation.validationEmailResult(input));
     }
 
 
