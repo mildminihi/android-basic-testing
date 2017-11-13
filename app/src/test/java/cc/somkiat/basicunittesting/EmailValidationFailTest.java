@@ -23,4 +23,11 @@ public class EmailValidationFailTest {
         boolean result = emailValidation.isNull(null);
         assertFalse("ต้องไม่ผ่านเพราะEMAILเป็นnull", result);
     }
+
+    @Test
+    public void emailIsNotPatterm(){
+        EmailValidation emailValidation = new EmailValidation();
+        boolean result = emailValidation.isEmailPattern("MildsupanatAddExempledotcom");
+        assertFalse("ต้องไม่ผ่านเพราะผิดPattern", result);
+    }
 }
