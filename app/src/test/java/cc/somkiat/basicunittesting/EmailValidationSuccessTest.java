@@ -15,4 +15,13 @@ public class EmailValidationSuccessTest {
         assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", result);
 
     }
+
+    @Test
+    public void emailIsStandard2(){
+        EmailValidation emailValidation = new EmailValidation();
+        boolean result = emailValidation.isEmailPattern("mild@example.co.th");
+        assertTrue("ต้องผ่านเพราะเป็นEMAILทั่วไป", result);
+    }
+
+
 }
