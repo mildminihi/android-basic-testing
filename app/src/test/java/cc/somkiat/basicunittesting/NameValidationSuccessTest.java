@@ -14,13 +14,13 @@ public class NameValidationSuccessTest {
     public void nameisFullName(){
         NameValidation validation = new NameValidation();
         String result = validation.validationNameResult("mild supanat");
-        assertEquals("Validation Success", result);
+        assertEquals("Name Validation Success", result);
     }
 
     @Test
     public void nameisSingleWord(){
         NameValidation validation = new NameValidation();
         String result = validation.validationNameResult("mild");
-        assertEquals("Validation Success", result);
+        assertEquals("Name Validation Success", result);
     }
 }

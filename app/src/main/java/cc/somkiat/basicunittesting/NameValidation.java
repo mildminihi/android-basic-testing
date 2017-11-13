@@ -5,14 +5,14 @@ package cc.somkiat.basicunittesting;
  */
 
 class NameValidation {
-    private String validationResult = "Validation Success";
+    private String validationResult = "Name Validation Success";
 
     public String validationNameResult(String name){
 
         if (isEmpty(name) == false){
             validationResult = "Name is Empty";
         }
-        if (isNull(name) == false){
+        else if (isNull(name) == false){
             validationResult = "Name is Null";
         }
         else if (isAlphabet(name) == false) {
