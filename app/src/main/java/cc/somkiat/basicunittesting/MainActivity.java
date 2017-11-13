@@ -7,23 +7,31 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText name;
+    EditText name, email;
+    NameValidation nameValidation;
+    EmailValidation emailValidation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText name = (EditText)findViewById(R.id.userNameInput);
+        name = findViewById(R.id.userNameInput);
+        email = findViewById(R.id.emailInput);
+        nameValidation = new NameValidation();
+        emailValidation = new EmailValidation();
     }
 
     public void onSaveClick(View view) {
-        //TODO
-        NameValidation nameValidation =new NameValidation();
-        Toast.makeText(MainActivity.this, nameValidation.validationNameResult(name.getText().toString()), Toast.LENGTH_LONG).show();
+
+        Toast.makeText(MainActivity.this, "Validation Result:" + nameValidation.validationNameResult(name.getText().toString()) + " And "+
+                emailValidation.validationEmailResult(email.getText().toString()), Toast.LENGTH_LONG).show();
 
     }
 
     public void onRevertClick(View view) {
-        //TODO
+
+        name.setText("");
+        email.setText("");
     }
 }

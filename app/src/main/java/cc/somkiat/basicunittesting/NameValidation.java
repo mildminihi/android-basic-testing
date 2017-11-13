@@ -5,18 +5,22 @@ package cc.somkiat.basicunittesting;
  */
 
 class NameValidation {
-    private String validationResult = "Name Validation Success";
+
 
     public String validationNameResult(String name){
+        String validationResult = "Name Validation Success";
 
-        if (isEmpty(name) == false){
-            validationResult = "Name is Empty";
-        }
-        else if (isNull(name) == false){
+        if (isNull(name) == false){
             validationResult = "Name is Null";
+        }
+        else if (isEmpty(name) == false){
+            validationResult = "Name is Empty";
         }
         else if (isAlphabet(name) == false) {
             validationResult = "Name contain non Alphabet Characters";
+        }
+        else if (lengthIsin2to20(name) == false){
+            validationResult = "Name is Not in Length";
         }
         return validationResult;
     }
@@ -39,7 +43,7 @@ class NameValidation {
         return true;
     }
 
-    public boolean lenthIsin2to20(String name){
+    public boolean lengthIsin2to20(String name){
         if (name.length() < 2 || name.length() > 20){
             return false;
         }

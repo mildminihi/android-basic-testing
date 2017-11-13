@@ -8,15 +8,16 @@ import java.util.regex.Pattern;
  */
 
 public class EmailValidation {
-    private String emailValidationResult = "Email Validation Success";
+
 
     public String validationEmailResult(String email){
+        String emailValidationResult = "Email Validation Success";
 
-        if (isEmpty(email) == false){
-            emailValidationResult = "Email is Empty";
+        if (isNull(email) == false){
+            emailValidationResult = "Email is Null";
         }
-        else if (isNull(email) == false){
-            emailValidationResult = "Email is null";
+        else if (isEmpty(email) == false){
+            emailValidationResult = "Email is Empty";
         }
         else if (isEmailPattern(email) == false){
             emailValidationResult = "Is not Email Pattern";
