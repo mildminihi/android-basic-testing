@@ -46,7 +46,15 @@ public class MainActivityTest {
 //        onView(withText("Validation Result: Name Validation Success And Email Validation Success")).check(matches(isDisplayed()));
     }
 
-    
+    @Test
+    public void saveWithEmptyName(){
+        
+        onView(withId(R.id.emailInput)).perform(replaceText("Mildsupanat@example.com"), closeSoftKeyboard());
+        onView(allOf(withId(R.id.saveButton), withText("Save"))).perform(click());
+//        onView(withText("Validation Result: Name Validation Success And Email Validation Success")).check(matches(isDisplayed()));
+    }
+
+
 
 
 }
