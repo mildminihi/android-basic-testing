@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSaveClick(View view) {
 
-        Toast.makeText(MainActivity.this, "Validation Result:" + nameValidation.validationNameResult(name.getText().toString()) + " And "+
+        Toast.makeText(MainActivity.this, "Validation Result: " + nameValidation.validationNameResult(name.getText().toString()) + " And "+
                 emailValidation.validationEmailResult(email.getText().toString()), Toast.LENGTH_LONG).show();
 
     }
