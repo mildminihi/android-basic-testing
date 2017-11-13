@@ -16,4 +16,11 @@ public class EmailValidationFailTest {
         boolean result = emailValidation.isEmpty("");
         assertFalse("ต้องไม่ผ่านเพราะEMAILเป็นค่าว่าง", result);
     }
+
+    @Test
+    public void emailIsNull(){
+        EmailValidation emailValidation = new EmailValidation();
+        boolean result = emailValidation.isNull(null);
+        assertFalse("ต้องไม่ผ่านเพราะEMAILเป็นnull", result);
+    }
 }
