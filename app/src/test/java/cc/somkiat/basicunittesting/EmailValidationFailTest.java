@@ -3,7 +3,7 @@ package cc.somkiat.basicunittesting;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by mild supanat on 13/11/2560.
@@ -13,27 +13,27 @@ public class EmailValidationFailTest {
 
     @Test
     public void emailIsEmpty(){
-        EmailValidation emailValidation = new EmailValidation();
+        ValidateEmailEmpty validation = new ValidateEmailEmpty();
         String input = "";
-        boolean result = emailValidation.isEmpty(input);
-        assertFalse("ต้องไม่ผ่านเพราะEMAILเป็นค่าว่าง", result);
-        assertEquals("Email is Empty", emailValidation.validationEmailResult(input));
+        boolean result = validation.isValid(input);
+        assertTrue("ต้องผ่านเพราะEMAILเป็นค่าว่าง", result);
+        assertEquals("Email is Empty", validation.GetErrorMessage());
     }
 
     @Test
     public void emailIsNull(){
-        EmailValidation emailValidation = new EmailValidation();
-        boolean result = emailValidation.isNull(null);
-        assertFalse("ต้องไม่ผ่านเพราะEMAILเป็นnull", result);
-        assertEquals("Email is Null", emailValidation.validationEmailResult(null));
+        ValidateEmailNull validation = new ValidateEmailNull();
+        boolean result = validation.isValid(null);
+        assertTrue("ต้องผ่านเพราะEMAILเป็นnull", result);
+        assertEquals("Email is Null", validation.GetErrorMessage());
     }
 
     @Test
     public void emailIsNotPatterm(){
-        EmailValidation emailValidation = new EmailValidation();
+        ValidateEmailPattern validation = new ValidateEmailPattern();
         String input = "MildsupanatAddExempledotcom";
-        boolean result = emailValidation.isEmailPattern(input);
-        assertFalse("ต้องไม่ผ่านเพราะผิดPattern", result);
-        assertEquals("Is not Email Pattern", emailValidation.validationEmailResult(input));
+        boolean result = validation.isValid(input);
+        assertTrue("ต้องผ่านเพราะผิดPattern", result);
+        assertEquals("Email is Not Pattern", validation.GetErrorMessage());
     }
 }

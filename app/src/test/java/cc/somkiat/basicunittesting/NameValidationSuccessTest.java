@@ -2,8 +2,7 @@ package cc.somkiat.basicunittesting;
 
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertFalse;
 
 /**
  * Created by mild supanat on 11/11/2560.
@@ -13,22 +12,40 @@ public class NameValidationSuccessTest {
 
     @Test
     public void nameisFullName(){
-        NameValidation validation = new NameValidation();
-        String result = validation.validationNameResult("mild supanat");
-        assertEquals("Name Validation Success", result);
+        ValidateNameEmpty validateNameEmpty = new ValidateNameEmpty();
+        ValidateNameLength validateNameLength = new ValidateNameLength();
+        ValidateNameNull validateNameNull = new ValidateNameNull();
+        ValidateNameAplabet validateNameAplabet = new ValidateNameAplabet();
+        String input = "mild supanat";
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameNull.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameEmpty.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameLength.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameAplabet.isValid(input));
     }
 
     @Test
     public void nameisSingleWord(){
-        NameValidation validation = new NameValidation();
-        String result = validation.validationNameResult("mild");
-        assertEquals("Name Validation Success", result);
+        String input = "mild";
+        ValidateNameEmpty validateNameEmpty = new ValidateNameEmpty();
+        ValidateNameLength validateNameLength = new ValidateNameLength();
+        ValidateNameNull validateNameNull = new ValidateNameNull();
+        ValidateNameAplabet validateNameAplabet = new ValidateNameAplabet();
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameNull.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameEmpty.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameLength.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameAplabet.isValid(input));
     }
 
     @Test
     public void nameisInLenth(){
-        NameValidation validation = new NameValidation();
-        boolean result = validation.lengthIsin2to20("mild");
-        assertTrue("ต้องผ่านเพราะความยาวชื่ออยู่ในที่กำหนดไว้", result);
+        String input = "mild";
+        ValidateNameEmpty validateNameEmpty = new ValidateNameEmpty();
+        ValidateNameLength validateNameLength = new ValidateNameLength();
+        ValidateNameNull validateNameNull = new ValidateNameNull();
+        ValidateNameAplabet validateNameAplabet = new ValidateNameAplabet();
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameNull.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameEmpty.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameLength.isValid(input));
+        assertFalse("ต้องไม่ผ่านเพราะเป็นค่าปกติ", validateNameAplabet.isValid(input));
     }
 }
